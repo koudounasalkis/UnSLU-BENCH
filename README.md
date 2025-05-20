@@ -1,10 +1,25 @@
 # Machine Unlearning on Spoken Language Understanding
 
-This repository contains the detailed experimental results for the INTERSPEECH 2025 submission paper **"Alexa, can you *forget* me?” Machine Unlearning Benchmark on Spoken Language Understanding**. 
+## 📖 Overview
+This repository contains the detailed experimental results for the paper **"Alexa, can you *forget* me?” Machine Unlearning Benchmark on Spoken Language Understanding**, accepted at INTERSPEECH 2025.
 
-Full code, experimental setup, and results will be released upon paper acceptance.
+[![paper](https://img.shields.io/badge/Paper_\(coming_soon\)-Interspeech-green)]()
+[![paper](https://img.shields.io/badge/Paper-arXiv-blue)]()
+[![models-collection](https://img.shields.io/badge/Models_Collection-HuggingFace-red)]()
 
----
+## 🔗 Table of Contents
+- [⚙️ Experimental Setup](#⚙️-experimental-setup)
+- [📊 Detailed Results](#📊-detailed-results)
+  - [1. Comparison of unlearning methods](#1-comparison-of-unlearning-methods)
+    - [A. FSC](#a-fsc)
+    - [B. SLURP*](#b-slurp)
+    - [C. ITALIC](#c-italic)
+    - [D. SpeechMASSIVE (DE)](#d-speechmassive-de)
+    - [E. SpeechMASSIVE (FR)](#e-speechmassive-fr)
+  - [2. Best Learning Rate (LR) for Unlearning Methods](#2-best-learning-rate-lr-for-unlearning-methods)
+- [📜 License](#📜-license)
+- [📧 Contact](#📧-contact)
+- [📄 Citation](#📄-citation)
 
 ## ⚙️ Experimental Setup
 
@@ -128,9 +143,18 @@ The following table shows the best LR value that maximizes the Global Unlearning
 | `BT-L` |     1e-06   |         5e-07   |      1e-06   |           1e-06   |         1e-06    |           1e-06    |         1e-06    |           1e-06   |         1e-06    |           1e-06    |
 | `SCRUB`              |     5e-06   |        1e-06    |      5e-06   |           5e-06   |         5e-06    |           5e-06    |         5e-06    |           5e-06   |         5e-06    |           5e-07    |
 
-
----
-
-
- 
 > For further details, please refer to the accompanying paper.
+
+## 📜 License
+This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
+
+## 📧 Contact
+For any inquiries or feedback, please contact [Alkis Koudounas](mailto:alkis.koudounas@polito.it) and [Claudio Savelli](mailto:claudio.savelli@polito.it).
+
+## 📄 Citation
+If you find this repository useful, please consider citing our paper:
+
+```bibtex
+coming soon
+```
+
