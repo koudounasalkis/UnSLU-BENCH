@@ -1,8 +1,6 @@
 # Machine Unlearning on Spoken Language Understanding
 
-This repository contains the detailed experimental results for the INTERSPEECH 2025 submission paper **"Alexa, can you *forget* me?” Machine Unlearning Benchmark on Spoken Language Understanding**. 
-
-Full code, experimental setup, and results will be released upon paper acceptance.
+This repository contains the detailed experimental results for the paper **"Alexa, can you *forget* me?” Machine Unlearning Benchmark on Spoken Language Understanding**, accepted at INTERSPEECH 2025.
 
 ---
 
@@ -130,7 +128,6 @@ The following table shows the best LR value that maximizes the Global Unlearning
 
 
 ---
-
 
  
 > For further details, please refer to the accompanying paper.
