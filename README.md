@@ -31,6 +31,9 @@ On ITALIC and SpeechMASSIVE, both XLS-R-128 and specialized XLS-R-53 models are 
 
 **Unlearning methods.** All unlearning methods were tested for a single epoch and with the hyperparameters recommended in the original papers. For example, in cf-k, the entire network was frozen except the last layer (cf-1). With SCRUB, a temperature T = 4.0 was used, and with Bad Teaching, the KL temperature is 1. In UNSIR, the learning rate of the noise was set to 0.01. AdamW was used as the optimizer for all methods to remain compliant with the training. 
 
+**Datasets.** It is possible to obtain the datasets used in the experiments by running the relative notebooks present in the `unlearning_datasets_creation` folder. Once the datasets are created, they can be found in the `data_name` folder, where name is the name of the dataset. The datasets are **FSC** (`data_fsc`), **SLURP\*** (`data_slurp*`), **ITALIC** (`data_italic`), **SpeechMASSIVE** (`data_sm-de` and `data_sm-fr`).
+
+
 All experiments are conducted on a single NVIDIA A6000 48GB GPU. 
 
 ---

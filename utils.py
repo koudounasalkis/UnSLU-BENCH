@@ -32,31 +32,31 @@ def parse_cmd_line_params():
     parser.add_argument(
         "--df_train",
         help="path to the train df",
-        default="train.csv",
+        default="data_name/train.csv",
         type=str,
         required=False) 
     parser.add_argument(
         "--df_val",
         help="path to the val df",
-        default="val_forget.csv",
+        default="data_name/val.csv",
         type=str,
         required=False) 
     parser.add_argument(
         "--df_test",
         help="path to the test df",
-        default="test_forget.csv",
+        default="data_name/test.csv",
         type=str,
         required=False)
     parser.add_argument(
         "--df_retain",
         help="path to the retain df",
-        default="retain.csv",
+        default="data_name/retain.csv",
         type=str,
         required=False)
     parser.add_argument(
         "--df_forget",
         help="path to the forget df",
-        default="forget.csv",
+        default="data_name/forget.csv",
         type=str,
         required=False)
     parser.add_argument(
