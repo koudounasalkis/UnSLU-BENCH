@@ -6,7 +6,7 @@ This repository contains the detailed experimental results for the paper **"Alex
 [![paper](https://img.shields.io/badge/Paper_\(coming_soon\)-Interspeech-green)]()
 [![paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2505.15700)
 [![SLU-models-collection](https://img.shields.io/badge/SLU_Models_Collection-HuggingFace-red)](https://huggingface.co/collections/alkiskoudounas/slu-models-67bcb156245d12b6b08bf2f2)
-[![UNLEARNING-models-collection](https://img.shields.io/badge/UnSLU_Models_Collection-HuggingFace-yellow)](https://huggingface.co/collections/alkiskoudounas/unslu-bench-68304d8647fb9b0c72533066)
+[![UNLEARNING-models-collection](https://img.shields.io/badge/UnSLU_Models_Collection_(GOLD)-HuggingFace-yellow)](https://huggingface.co/collections/alkiskoudounas/unslu-bench-68304d8647fb9b0c72533066)
 
 ## 🔗 Table of Contents
 - [⚙️ Experimental Setup](#⚙️-experimental-setup)
