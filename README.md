@@ -4,8 +4,9 @@
 This repository contains the detailed experimental results for the paper **"Alexa, can you *forget* me?” Machine Unlearning Benchmark on Spoken Language Understanding**, accepted at INTERSPEECH 2025.
 
 [![paper](https://img.shields.io/badge/Paper_\(coming_soon\)-Interspeech-green)]()
-[![paper](https://img.shields.io/badge/Paper-arXiv-blue)]()
-[![models-collection](https://img.shields.io/badge/Models_Collection-HuggingFace-red)]()
+[![paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2505.15700)
+[![SLU-models-collection](https://img.shields.io/badge/SLU_Models_Collection-HuggingFace-red)](https://huggingface.co/collections/alkiskoudounas/slu-models-67bcb156245d12b6b08bf2f2)
+[![UNLEARNING-models-collection](https://img.shields.io/badge/UnSLU_Models_Collection-HuggingFace-yellow)](https://huggingface.co/collections/alkiskoudounas/unslu-bench-68304d8647fb9b0c72533066)
 
 ## 🔗 Table of Contents
 - [⚙️ Experimental Setup](#⚙️-experimental-setup)
@@ -80,7 +81,7 @@ All experiments are conducted on a single NVIDIA A6000 48GB GPU.
 
 | **Method** | F1_Test | Acc_Test | F1_Forget | Acc_Forget | MIA   | GUM   | Speedup | F1_Test | Acc_Test | F1_Forget | Acc_Forget | MIA   | GUM   | Speedup |
 |------------|---------|----------|-----------|------------|--------|--------|---------|---------|----------|-----------|------------|--------|--------|---------|
-|            | **wav2vec 2.0** → |||| ||| **HuBERT** → |||||
+|            | **XLS-R 128** → |||| ||| **XLS-R 53-IT** → |||||
 | **Orig.**  | 0.689   | 0.815    | 1.000     | 0.999      | 0.628  | 0.000  | 1.000×  | 0.712   | 0.830    | 1.000     | 1.000      | 0.613  | 0.000  | 1.000×  |
 | **Gold**   | 0.707   | 0.825    | 0.711     | 0.822      | 0.506  | 0.000  | 1.000×  | 0.704   | 0.826    | 0.715     | 0.821      | 0.492  | 0.000  | 1.000×  |
 | FT         | 0.638   | 0.750    | **0.970** | 0.989      | 0.648  | 0.000  | 83.78×  | 0.734   | 0.827    | 1.000     | 1.000      | 0.611  | 0.088  | 79.00×  |
@@ -155,6 +156,11 @@ For any inquiries or feedback, please contact [Alkis Koudounas](mailto:alkis.kou
 If you find this repository useful, please consider citing our paper:
 
 ```bibtex
-coming soon
+@inproceedings{koudounas2025unlearning,
+  title={"Alexa, can you forget me?" Machine Unlearning Benchmark in Spoken Language Understanding},
+  author={Koudounas, Alkis and Savelli, Claudio and Giobergia, Flavio and Baralis, Elena},
+  booktitle={Proc. Interspeech 2025}, 
+  year={2025},
+}
 ```
 
