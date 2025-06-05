@@ -7,7 +7,7 @@ from datasets import load_dataset
 import warnings
 warnings.filterwarnings("ignore")
 
-import dataset    
+from unlearning_evaluation import print_evaluation_metrics
 from utils import set_seed, define_model, read_data, parse_cmd_line_params
 import unlearners
 
@@ -38,6 +38,11 @@ def main():
             args.df_val, 
             )
         print("Num labels: ", num_labels)
+
+        _, df_test, _, _, _, _ = read_data(
+        args.df_train, 
+        args.df_test, 
+        )
         
         _, df_retain, _, _, _, _ = read_data(
             args.df_train, 
@@ -73,10 +78,26 @@ def main():
             args.max_duration, 
             args.dataset
             )
+        val_dataset = dataset.Dataset_slurp_fsc(
+            df_val, 
+            feature_extractor, 
+            args.max_duration,
+            dataset=args.dataset_name
+            )
+        test_dataset = dataset.Dataset_slurp_fsc(
+            df_test, 
+            feature_extractor, 
+            args.max_duration,
+            dataset=args.dataset_name,
+            )
+        
     elif args.dataset == "italic" or args.dataset == "de-DE" or args.dataset == "fr-FR":
         dataset = load_dataset("RiTA-nlp/ITALIC", args.dataset_name) if args.dataset == "italic" else load_dataset("FBK-MT/Speech-MASSIVE", args.dataset_name)
 
         ds_train = dataset["train"]
+        ds_validation = dataset["validation"]
+        if args.dataset == "italic":
+            ds_test = dataset["test"] if args.dataset == "italic" else load_dataset("FBK-MT/Speech-MASSIVE-test", args.dataset_name, split="test")
         ds_forget, ds_retain = dataset.get_forget_retain_datasets(ds_train, f"{args.dataset_name}/")
 
         ## Mapping intents to labels
@@ -106,6 +127,20 @@ def main():
             )
         retain_dataset = dataset.Dataset_italic_sm(
             ds_retain, 
+            feature_extractor, 
+            label2id, 
+            args.max_duration, 
+            device
+            )
+        val_dataset = dataset.Dataset_italic_sm(
+            ds_validation, 
+            feature_extractor, 
+            label2id, 
+            args.max_duration, 
+            device
+            )
+        test_dataset = dataset.Dataset_italic_sm(
+            ds_test, 
             feature_extractor, 
             label2id, 
             args.max_duration, 
@@ -161,10 +196,13 @@ def main():
         else:
             time = unlearner(model, retain_dataloader, forget_dataloader, device, lr=args.lr, seed=args.seed, num_epochs=args.epochs)
 
-    txt_dir = f"times_{args.dataset}_{args.model_name_or_path}.txt"
+    dict = print_evaluation_metrics(model, forget_dataset, val_dataset, test_dataset, output_dir, device, save=True)
+    txt_dir = f"{output_dir}/evaluation_metrics.txt" if args.seed == 0 else f"{output_dir}/evaluation_metrics_seed_{args.seed}.txt"
 
-    with open(txt_dir, 'a') as f:
-        f.write(f'{unlearner_name}: {time}\n')
+    with open(txt_dir, 'w') as f:
+        for key, value in dict.items():
+            f.write(f'{key}: {value}\n')
+        f.write(f'Unlearning Time: {time}\n')
 
     return
 
