@@ -1,10 +1,12 @@
 # Machine Unlearning on Spoken Language Understanding
 
 ## 📖 Overview
-This repository contains the detailed experimental results for the paper **"Alexa, can you *forget* me?” Machine Unlearning Benchmark on Spoken Language Understanding**, accepted at INTERSPEECH 2025.
+This repository contains the detailed experimental results for the paper **"Alexa, can you *forget* me?” Machine Unlearning Benchmark on Spoken Language Understanding**, accepted at INTERSPEECH 2025, and of **"UnSLU-BENCH+: Extended Machine Unlearning Benchmark for Spoken Language Understanding"**, published at IEEE Transactions on Audio, Speech and Language Processing (TASLP) in 2026. 
 
-[![paper](https://img.shields.io/badge/Paper_\(coming_soon\)-Interspeech-green)]()
-[![paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2505.15700)
+**CGUM update.** With respect to the initial version, the GUM metric has been updated in the journal paper, and the new CGUM implementation is available in the notebook [CGUM.ipynb](CGUM.ipynb). For future experimentation, we recommend using CGUM instead of GUM.
+
+[![paper](https://img.shields.io/badge/Paper-Interspeech-green)](https://www.isca-archive.org/interspeech_2025/koudounas25c_interspeech.pdf)
+[![paper TASLP](https://img.shields.io/badge/Paper-TASLP-green)](https://ieeexplore.ieee.org/abstract/document/11447421)
 [![SLU-models-collection](https://img.shields.io/badge/SLU_Models_Collection-HuggingFace-red)](https://huggingface.co/collections/alkiskoudounas/slu-models-67bcb156245d12b6b08bf2f2)
 [![UNLEARNING-models-collection](https://img.shields.io/badge/UnSLU_Models_Collection_(GOLD)-HuggingFace-yellow)](https://huggingface.co/collections/alkiskoudounas/unslu-bench-68304d8647fb9b0c72533066)
 
@@ -34,9 +36,8 @@ On ITALIC and SpeechMASSIVE, both XLS-R-128 and specialized XLS-R-53 models are 
 **Datasets.** It is possible to obtain the datasets used in the experiments by running the relative notebooks present in the `unlearning_datasets_creation` folder. Once the datasets are created, they can be found in the `data_name` folder, where name is the name of the dataset. The datasets are **FSC** (`data_fsc`), **SLURP\*** (`data_slurp*`), **ITALIC** (`data_italic`), **SpeechMASSIVE** (`data_sm-de` and `data_sm-fr`).
 
 
-All experiments are conducted on a single NVIDIA A6000 48GB GPU. 
+All experiments are conducted on two NVIDIA A6000 48GB GPU. 
 
----
 
 ## 📊 Detailed Results
 
@@ -157,14 +158,25 @@ This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE
 For any inquiries or feedback, please contact [Alkis Koudounas](mailto:alkis.koudounas@polito.it) and [Claudio Savelli](mailto:claudio.savelli@polito.it).
 
 ## 📄 Citation
-If you find this repository useful, please consider citing our paper:
+If you find this repository useful or you use GUM or CGUM, please consider citing our papers:
 
 ```bibtex
-@inproceedings{koudounas2025unlearning,
-  title={"Alexa, can you forget me?" Machine Unlearning Benchmark in Spoken Language Understanding},
-  author={Koudounas, Alkis and Savelli, Claudio and Giobergia, Flavio and Baralis, Elena},
-  booktitle={Proc. Interspeech 2025}, 
-  year={2025},
+@inproceedings{koudounas25c_interspeech,
+  title     = {{``Alexa, can you forget me?'' Machine Unlearning Benchmark in Spoken Language Understanding}},
+  author    = {Alkis Koudounas and Claudio Savelli and Flavio Giobergia and Elena Baralis},
+  year      = {2025},
+  booktitle = {{Interspeech 2025}},
+  pages     = {1768--1772},
+  doi       = {10.21437/Interspeech.2025-2607},
+  issn      = {2958-1796},
+}
+
+@article{savelli2026unslu,
+  title={UnSLU-BENCH+: Extended Machine Unlearning Benchmark for Spoken Language Understanding},
+  author={Savelli, Claudio and Koudounas, Alkis and Giobergia, Flavio and Baralis, Elena},
+  journal={IEEE Transactions on Audio, Speech and Language Processing},
+  year={2026},
+  publisher={IEEE}
 }
 ```
 
